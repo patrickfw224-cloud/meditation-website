@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" role="img" aria-label="Optic">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="75%"><stop offset="0" stop-color="#1b1f4a"/><stop offset="1" stop-color="#080b16"/></radialGradient>
+    <radialGradient id="lens" cx="40%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#c9bfff" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#7d6cf0" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#2a2570" stop-opacity="0.2"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <rect width="640" height="640" fill="url(#bg)"/>
+  <g fill="none" stroke="#a394ff" stroke-opacity="0.35" stroke-width="1">
+    <circle cx="320" cy="320" r="280"/><circle cx="320" cy="320" r="240"/><circle cx="320" cy="320" r="200"/>
+    <circle cx="320" cy="320" r="160"/><circle cx="320" cy="320" r="120"/>
+  </g>
+  <circle cx="320" cy="320" r="110" fill="url(#lens)"/>
+  <circle cx="320" cy="320" r="110" fill="none" stroke="#c9bfff" stroke-opacity="0.6"/>
+  <circle cx="320" cy="320" r="40" fill="#06080f"/>
+  <ellipse cx="286" cy="272" rx="26" ry="14" fill="#ffffff" opacity="0.55" transform="rotate(-30 286 272)" filter="url(#soft)"/>
+  <circle cx="320" cy="320" r="8" fill="#e9c98e"/>
+</svg>
