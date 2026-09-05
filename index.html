@@ -46,29 +46,65 @@
 
   <main id="main">
 
-    <!-- Hero -->
-    <section class="hero starfield" aria-labelledby="hero-title">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Guided meditation · Evenings and late nights</p>
-          <h1 id="hero-title">Find stillness in the <em>quiet hours.</em></h1>
-          <p class="lede">Nocturne is a small meditation studio for people whose days run late. Live, guided sittings every evening, online or in our candlelit room. No experience needed. Just arrive.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary btn-lg" href="booking.html">Book a session</a>
-            <a class="btn btn-ghost btn-lg" href="#practices">Explore practices</a>
-          </div>
-          <ul class="hero-meta">
-            <li>Sittings from 6pm to 11pm</li>
-            <li>25 to 60 minutes</li>
-            <li>Online or in studio</li>
-          </ul>
+    <!-- Hero: six full-bleed passages that crossfade as the page scrolls -->
+    <section class="hero passages" aria-label="Introduction" data-passages>
+      <div class="passages-stage">
+        <div class="passages-art" aria-hidden="true">
+          <figure class="passage-art is-active"><img src="art/plate-eclipse.svg" width="640" height="640" alt="" fetchpriority="high"></figure>
+          <figure class="passage-art"><img src="art/plate-profile.svg" width="640" height="640" alt=""></figure>
+          <figure class="passage-art"><img src="art/plate-radiation.svg" width="640" height="640" alt=""></figure>
+          <figure class="passage-art"><img src="art/plate-optic.svg" width="640" height="640" alt=""></figure>
+          <figure class="passage-art"><img src="art/plate-vitrium.svg" width="640" height="640" alt=""></figure>
+          <figure class="passage-art"><img src="art/plate-stones.svg" width="640" height="640" alt=""></figure>
         </div>
-        <div class="hero-visual">
-          <div class="plate-frame">
-            <img class="plate-hero" src="art/plate-eclipse.svg" width="640" height="640" alt="An eclipse: a dark disc ringed by a soft golden corona" fetchpriority="high">
-            <span class="plate-caption">Tonight · Breath · 9pm</span>
-          </div>
+        <div class="container passages-copy">
+          <article class="passage is-active" aria-hidden="false">
+            <p class="eyebrow">Arrive</p>
+            <h1 id="hero-title">Find stillness in the <em>quiet hours.</em></h1>
+            <p class="lede">Nocturne is a small meditation studio for people whose days run late. Live, guided sittings every evening, online or in our candlelit room. No experience needed. Just arrive.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="booking.html">Book a session</a>
+              <a class="btn btn-ghost btn-lg" href="#practices">Explore practices</a>
+            </div>
+            <ul class="hero-meta">
+              <li>Sittings from 6pm to 11pm</li>
+              <li>25 to 60 minutes</li>
+              <li>Online or in studio</li>
+            </ul>
+          </article>
+          <article class="passage" aria-hidden="true">
+            <p class="eyebrow">Attend</p>
+            <h2>Notice the thinking without joining it.</h2>
+          </article>
+          <article class="passage" aria-hidden="true">
+            <p class="eyebrow">Soften</p>
+            <h2>Let the edges of the day go out of focus.</h2>
+          </article>
+          <article class="passage" aria-hidden="true">
+            <p class="eyebrow">See</p>
+            <h2>Clarity isn't effort. It's what remains when effort stops.</h2>
+          </article>
+          <article class="passage" aria-hidden="true">
+            <p class="eyebrow">Rest</p>
+            <h2>Somewhere under the noise, you are already still.</h2>
+          </article>
+          <article class="passage" aria-hidden="true">
+            <p class="eyebrow">Walk</p>
+            <h2>One breath, then the next. That is the whole practice.</h2>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="booking.html">Start the first session</a>
+            </div>
+          </article>
         </div>
+        <ol class="passages-dots" aria-label="Passages">
+          <li><button type="button" class="is-active" aria-label="Passage 1 of 6: Arrive" aria-current="true"><span></span></button></li>
+          <li><button type="button" aria-label="Passage 2 of 6: Attend"><span></span></button></li>
+          <li><button type="button" aria-label="Passage 3 of 6: Soften"><span></span></button></li>
+          <li><button type="button" aria-label="Passage 4 of 6: See"><span></span></button></li>
+          <li><button type="button" aria-label="Passage 5 of 6: Rest"><span></span></button></li>
+          <li><button type="button" aria-label="Passage 6 of 6: Walk"><span></span></button></li>
+        </ol>
+        <p class="scroll-hint" aria-hidden="true">Scroll</p>
       </div>
     </section>
 

@@ -36,6 +36,51 @@
     Array.prototype.forEach.call(group.children, function (child, i) { child.style.setProperty('--i', i); });
   });
 
+  /* Hero passages: a sticky stage whose art and copy crossfade with scroll position. */
+  (function () {
+  var passages = document.querySelector('[data-passages]');
+  if (!passages) return;
+    var stage = passages.querySelector('.passages-stage');
+    var arts = Array.prototype.slice.call(passages.querySelectorAll('.passage-art'));
+    var copies = Array.prototype.slice.call(passages.querySelectorAll('.passage'));
+    var dots = Array.prototype.slice.call(passages.querySelectorAll('.passages-dots button'));
+    var count = copies.length;
+    var active = -1, ticking = false;
+
+    var setActive = function (i) {
+      if (i === active) return;
+      active = i;
+      arts.forEach(function (a, k) { a.classList.toggle('is-active', k === i); });
+      copies.forEach(function (c, k) {
+        c.classList.toggle('is-active', k === i);
+        c.setAttribute('aria-hidden', k === i ? 'false' : 'true');
+      });
+      dots.forEach(function (d, k) {
+        d.classList.toggle('is-active', k === i);
+        if (k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+      });
+      passages.classList.toggle('is-scrolled', i > 0);
+    };
+    var scrollRange = function () { return Math.max(1, passages.offsetHeight - stage.offsetHeight); };
+    var update = function () {
+      ticking = false;
+      var top = passages.getBoundingClientRect().top;
+      var progress = Math.min(1, Math.max(0, -top / scrollRange()));
+      setActive(Math.min(count - 1, Math.round(progress * (count - 1))));
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    dots.forEach(function (d, k) {
+      d.addEventListener('click', function () {
+        var target = passages.getBoundingClientRect().top + window.scrollY + (scrollRange() * k) / (count - 1);
+        window.scrollTo({ top: target, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      });
+    });
+    update();
+  })();
+
   /* Reveal on scroll. Decorative, one-shot, and skipped without IntersectionObserver. */
   var revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length) {

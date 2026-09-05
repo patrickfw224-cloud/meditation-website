@@ -12,7 +12,7 @@ python3 -m http.server 8080
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Landing page: hero, practices, method, guides, breathing tool, pricing, testimonials, FAQ, call to action, footer |
+| `index.html` | Landing page: a six-passage full-bleed scroll hero, practices, method, guides, breathing tool, pricing, testimonials, FAQ, call to action, footer |
 | `booking.html` | Four-step booking flow: practice → date & time → details → confirm, with a live summary, calendar export and an upcoming-sessions list |
 | `styles.css` | Design tokens and all shared styles |
 | `support.js` | Shared behaviour: header, mobile nav, scroll reveal, newsletter, breathing tool |

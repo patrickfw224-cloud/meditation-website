@@ -1,17 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" role="img" aria-label="Optic">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" role="img" aria-label="A lavender face in profile wearing round glasses">
   <defs>
-    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ece4f3"/><stop offset="1" stop-color="#cfd6ee"/></linearGradient>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dccd"/><stop offset="1" stop-color="#cfd6ee"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3b6ee"/><stop offset="0.55" stop-color="#a89be0"/><stop offset="1" stop-color="#8b7fcf"/></linearGradient>
     <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="40"/></filter>
-    <filter id="ring" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="edge" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="fine" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.4"/></filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="10"/></filter>
     <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
   </defs>
   <rect width="640" height="640" fill="url(#wash)"/>
-  <ellipse cx="150" cy="140" rx="200" ry="160" fill="#eba184" opacity="0.6" filter="url(#soft)"/>
-  <circle cx="340" cy="330" r="200" fill="#b3a6e3" opacity="0.7" filter="url(#soft)"/>
-  <g fill="none" stroke="#a89be0" stroke-opacity="0.55" stroke-width="2" filter="url(#ring)">
-    <circle cx="340" cy="330" r="240"/><circle cx="340" cy="330" r="190"/><circle cx="340" cy="330" r="140"/><circle cx="340" cy="330" r="90"/>
+  <ellipse cx="520" cy="130" rx="200" ry="150" fill="#eba184" opacity="0.7" filter="url(#soft)"/>
+  <ellipse cx="480" cy="600" rx="240" ry="150" fill="#8b9ad0" opacity="0.7" filter="url(#soft)"/>
+  <g transform="translate(640 0) scale(-1 1)">
+    <path fill="#8b7fcf" opacity="0.45" filter="url(#soft)" d="M262 92c92-10 160 52 166 130 4 46-10 70-4 92 6 20 22 28 16 40-4 8-14 8-12 18 2 8 8 12 2 20-6 8-16 4-12 18 4 12 4 30-16 40-26 12-64 8-84 6L318 640H120V282c0-50 4-92 30-130 24-36 62-54 112-60z"/>
+    <path fill="url(#face)" filter="url(#edge)" d="M262 92c92-10 160 52 166 130 4 46-10 70-4 92 6 20 22 28 16 40-4 8-14 8-12 18 2 8 8 12 2 20-6 8-16 4-12 18 4 12 4 30-16 40-26 12-64 8-84 6L318 640H120V282c0-50 4-92 30-130 24-36 62-54 112-60z"/>
   </g>
-  <circle cx="340" cy="330" r="60" fill="#8b9ad0" opacity="0.8" filter="url(#ring)"/>
-  <ellipse cx="300" cy="290" rx="34" ry="18" fill="#ffffff" opacity="0.7" transform="rotate(-30 300 290)" filter="url(#ring)"/>
+  <g fill="none" stroke="#f4f4fb" stroke-opacity="0.92" stroke-width="3.5" stroke-linecap="round" filter="url(#fine)">
+    <circle cx="262" cy="272" r="46"/>
+    <ellipse cx="186" cy="274" rx="15" ry="44"/>
+    <path d="M201 266c6-6 10-6 15-2"/>
+    <path d="M308 262c40-8 78-12 122-6"/>
+  </g>
+  <ellipse cx="250" cy="258" rx="26" ry="14" fill="#ffffff" opacity="0.6" transform="rotate(-25 250 258)" filter="url(#glow)"/>
   <rect width="640" height="640" filter="url(#noise)" opacity="0.09" style="mix-blend-mode:multiply"/>
 </svg>
